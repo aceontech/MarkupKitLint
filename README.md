@@ -1,5 +1,5 @@
 # MarkupKitLint
-Linting and validation utilities for MarkupKit which integrate with Xcode.
+Linting and validation utilities for MarkupKit integrated into Xcode.
 
 ## mklint.sh
 
