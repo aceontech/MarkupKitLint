@@ -30,6 +30,10 @@ curl -O https://raw.githubusercontent.com/jarrroo/MarkupKitLint/master/Scripts/m
 3. Add a new `Run Script Phase`
 4. Type the following command into the shell box:
 
+```sh
+./mklint.sh
+```
+
 ![](Documentation/mklint_setup1.png)
 
 #### 4. That's it
