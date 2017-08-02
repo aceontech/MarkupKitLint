@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Derived using MOSO Xmplify 1.8.2 by Alex on 2017-08-02 13:59:31 +0000 -->
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema' elementFormDefault='qualified'>
+    <xs:element name='LMLinearGradientView'>
+        <xs:complexType>
+            <xs:attribute name='colors' use='required'/>
+            <xs:attribute name='locations' use='required'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMRadialGradientView'>
+        <xs:complexType>
+            <xs:attribute name='colors' use='required'/>
+            <xs:attribute name='locations' use='required'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMTableView'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs='0' ref='UIActivityIndicatorView'/>
+                <xs:choice maxOccurs='unbounded'>
+                    <xs:element ref='LMTableViewCell'/>
+                    <xs:element ref='UITableViewCell'/>
+                    <xs:element ref='UITableViewHeaderFooterView'/>
+                    <xs:element ref='sectionHeader'/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name='separatorStyle' type='xs:NCName'/>
+            <xs:attribute name='style' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIActivityIndicatorView'>
+        <xs:complexType>
+            <xs:attribute name='activityIndicatorViewStyle' use='required' type='xs:NCName'/>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMTableViewCell'>
+        <xs:complexType>
+            <xs:choice>
+                <xs:element ref='LMCollectionView'/>
+                <xs:element ref='LMPickerView'/>
+                <xs:element ref='LMRowView'/>
+                <xs:element ref='UIButton'/>
+                <xs:element ref='UIDatePicker'/>
+                <xs:element ref='UIImageView'/>
+                <xs:element ref='UIPageControl'/>
+                <xs:element ref='UISlider'/>
+                <xs:element ref='UITextField'/>
+                <xs:element ref='LMPlayerView'/>
+                <xs:element ref='UIProgressView'/>
+            </xs:choice>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='layoutMarginsRelativeArrangement' type='xs:NCName'/>
+            <xs:attribute name='selectionStyle' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMPlayerView'>
+        <xs:complexType>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+            <xs:attribute name='maximumHeight' use='required' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIProgressView'>
+        <xs:complexType>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+            <xs:attribute name='style' use='required' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UITableViewCell'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs='0' ref='UISwitch'/>
+            </xs:sequence>
+            <xs:attribute name='accessoryType' type='xs:NCName'/>
+            <xs:attribute name='checked' type='xs:NCName'/>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='selectionStyle' type='xs:NCName'/>
+            <xs:attribute name='textLabel.text' use='required'/>
+            <xs:attribute name='value'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UITableViewHeaderFooterView'>
+        <xs:complexType>
+            <xs:attribute name='textLabel.text' use='required'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='sectionHeader'>
+        <xs:complexType>
+            <xs:attribute name='title' use='required'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UILabel'>
+        <xs:complexType>
+            <xs:attribute name='anchor'/>
+            <xs:attribute name='backgroundColor'/>
+            <xs:attribute name='class'/>
+            <xs:attribute name='font'/>
+            <xs:attribute name='horizontalContentHuggingPriority' type='xs:integer'/>
+            <xs:attribute name='id' type='xs:NCName'/>
+            <xs:attribute name='lineBreakMode' type='xs:NCName'/>
+            <xs:attribute name='maximumWidth' type='xs:integer'/>
+            <xs:attribute name='minimumHeight' type='xs:integer'/>
+            <xs:attribute name='minimumWidth' type='xs:integer'/>
+            <xs:attribute name='numberOfLines' type='xs:integer'/>
+            <xs:attribute name='text'/>
+            <xs:attribute name='textAlignment' type='xs:NCName'/>
+            <xs:attribute name='textColor'/>
+            <xs:attribute name='verticalContentHuggingPriority' type='xs:integer'/>
+            <xs:attribute name='weight' type='xs:integer'/>
+            <xs:attribute name='width' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMLayerView'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs='0'>
+                    <xs:element ref='UIView'/>
+                    <xs:element ref='LMPageView'/>
+                    <xs:sequence>
+                        <xs:element ref='UIImageView'/>
+                        <xs:element ref='LMRowView'/>
+                        <xs:element ref='UIVisualEffectView'/>
+                    </xs:sequence>
+                </xs:choice>
+                <xs:element minOccurs='0' ref='UIStackView'/>
+                <xs:element minOccurs='0' ref='LMScrollView'/>
+                <xs:element minOccurs='0' ref='LMColumnView'/>
+                <xs:element minOccurs='0' ref='UITextField'/>
+            </xs:sequence>
+            <xs:attribute name='backgroundColor'/>
+            <xs:attribute name='layoutMargins' type='xs:integer'/>
+            <xs:attribute name='layoutMarginsRelativeArrangement' type='xs:NCName'/>
+            <xs:attribute name='weight' type='xs:decimal'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMPageView'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs='unbounded' ref='LMColumnView'/>
+            </xs:sequence>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIVisualEffectView'>
+        <xs:complexType>
+            <xs:attribute name='style' use='required' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIImageView'>
+        <xs:complexType>
+            <xs:attribute name='anchor' type='xs:NCName'/>
+            <xs:attribute name='backgroundColor' type='xs:NCName'/>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='clipsToBounds' type='xs:NCName'/>
+            <xs:attribute name='contentMode' type='xs:NCName'/>
+            <xs:attribute name='height' type='xs:integer'/>
+            <xs:attribute name='hidden' type='xs:NCName'/>
+            <xs:attribute name='horizontalContentCompressionResistancePriority' type='xs:integer'/>
+            <xs:attribute name='horizontalContentHuggingPriority' type='xs:integer'/>
+            <xs:attribute name='id' type='xs:NCName'/>
+            <xs:attribute name='image' type='xs:NCName'/>
+            <xs:attribute name='layer.shadowOffsetHeight' type='xs:integer'/>
+            <xs:attribute name='layer.shadowOpacity' type='xs:decimal'/>
+            <xs:attribute name='layer.shadowRadius' type='xs:integer'/>
+            <xs:attribute name='tintColor'/>
+            <xs:attribute name='verticalContentCompressionResistancePriority' type='xs:integer'/>
+            <xs:attribute name='verticalContentHuggingPriority' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIView'>
+        <xs:complexType>
+            <xs:attribute name='anchor'/>
+            <xs:attribute name='aspectRatio' type='xs:decimal'/>
+            <xs:attribute name='backgroundColor'/>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='id' type='xs:NCName'/>
+            <xs:attribute name='layer.cornerRadius' type='xs:integer'/>
+            <xs:attribute name='weight' type='xs:integer'/>
+            <xs:attribute name='width' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMColumnView'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs='0'>
+                    <xs:element ref='LMPickerView'/>
+                    <xs:element ref='UIToolbar'/>
+                    <xs:element ref='MKMapView'/>
+                    <xs:element ref='WKWebView'/>
+                </xs:choice>
+                <xs:choice minOccurs='0' maxOccurs='unbounded'>
+                    <xs:element ref='LMColumnView'/>
+                    <xs:element ref='LMLayerView'/>
+                    <xs:element ref='LMRowView'/>
+                    <xs:element ref='LMSpacer'/>
+                    <xs:element ref='UIButton'/>
+                    <xs:element ref='UIImageView'/>
+                    <xs:element ref='UILabel'/>
+                    <xs:element ref='UITextField'/>
+                    <xs:element ref='UIView'/>
+                    <xs:element ref='NSTextField'/>
+                    <xs:element ref='foo'/>
+                </xs:choice>
+                <xs:choice minOccurs='0'>
+                    <xs:element ref='LMAnchorView'/>
+                    <xs:element ref='UIPageControl'/>
+                    <xs:element ref='UITabBar'/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name='alignToGrid' type='xs:NCName'/>
+            <xs:attribute name='anchor'/>
+            <xs:attribute name='backgroundColor'/>
+            <xs:attribute name='bottomSpacing' type='xs:integer'/>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='clipsToBounds' type='xs:NCName'/>
+            <xs:attribute name='horizontalAlignment' type='xs:NCName'/>
+            <xs:attribute name='id' type='xs:NCName'/>
+            <xs:attribute name='layer.borderColor'/>
+            <xs:attribute name='layer.borderWidth' type='xs:decimal'/>
+            <xs:attribute name='layoutMarginBottom' type='xs:integer'/>
+            <xs:attribute name='layoutMargins' type='xs:integer'/>
+            <xs:attribute name='layoutMarginsRelativeArrangement' type='xs:NCName'/>
+            <xs:attribute name='spacing' type='xs:integer'/>
+            <xs:attribute name='topSpacing' type='xs:integer'/>
+            <xs:attribute name='verticalAlignment' type='xs:NCName'/>
+            <xs:attribute name='weight' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='MKMapView'>
+        <xs:complexType>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+            <xs:attribute name='layer.borderColor' use='required'/>
+            <xs:attribute name='layer.borderWidth' use='required' type='xs:decimal'/>
+            <xs:attribute name='weight' use='required' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='WKWebView'>
+        <xs:complexType>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+            <xs:attribute name='layer.borderColor' use='required'/>
+            <xs:attribute name='layer.borderWidth' use='required' type='xs:decimal'/>
+            <xs:attribute name='weight' use='required' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='NSTextField'>
+        <xs:complexType>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='foo'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref='bar'/>
+                <xs:element ref='UILabel'/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='bar'>
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name='UITabBar'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs='unbounded' ref='item'/>
+            </xs:sequence>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMCollectionView'>
+        <xs:complexType>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='collectionViewLayout.itemHeight' type='xs:integer'/>
+            <xs:attribute name='collectionViewLayout.itemWidth' type='xs:integer'/>
+            <xs:attribute name='collectionViewLayout.minimumLineSpacing' type='xs:integer'/>
+            <xs:attribute name='collectionViewLayout.scrollDirection' type='xs:NCName'/>
+            <xs:attribute name='height' type='xs:integer'/>
+            <xs:attribute name='id' type='xs:NCName'/>
+            <xs:attribute name='style' use='required' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMScrollView'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs='0' ref='UIRefreshControl'/>
+                <xs:choice minOccurs='0'>
+                    <xs:element ref='LMColumnView'/>
+                    <xs:element ref='LMRowView'/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name='backgroundColor'/>
+            <xs:attribute name='fitToHeight' type='xs:NCName'/>
+            <xs:attribute name='fitToWidth' type='xs:NCName'/>
+            <xs:attribute name='panGestureRecognizer.allowedTouchTypes'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIRefreshControl'>
+        <xs:complexType>
+            <xs:attribute name='onValueChanged' use='required' type='xs:NMTOKEN'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMRowView'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs='0' ref='LMLayerView'/>
+                <xs:choice minOccurs='0' maxOccurs='unbounded'>
+                    <xs:element ref='LMColumnView'/>
+                    <xs:element ref='LMRowView'/>
+                    <xs:element ref='LMSpacer'/>
+                    <xs:element ref='UIImageView'/>
+                    <xs:element ref='UILabel'/>
+                    <xs:element ref='UITextField'/>
+                    <xs:element ref='UISegmentedControl'/>
+                    <xs:element ref='UIStepper'/>
+                </xs:choice>
+                <xs:choice minOccurs='0'>
+                    <xs:element ref='UIButton'/>
+                    <xs:element ref='UISlider'/>
+                    <xs:element ref='UISwitch'/>
+                    <xs:element ref='UITextView'/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name='alignToBaseline' type='xs:NCName'/>
+            <xs:attribute name='backgroundColor'/>
+            <xs:attribute name='baseline' type='xs:NCName'/>
+            <xs:attribute name='bottomSpacing' type='xs:integer'/>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='horizontalAlignment' type='xs:NCName'/>
+            <xs:attribute name='layer.borderColor'/>
+            <xs:attribute name='layer.borderWidth' type='xs:decimal'/>
+            <xs:attribute name='layoutMarginBottom' type='xs:integer'/>
+            <xs:attribute name='layoutMarginTop' type='xs:integer'/>
+            <xs:attribute name='layoutMargins' type='xs:integer'/>
+            <xs:attribute name='spacing' type='xs:integer'/>
+            <xs:attribute name='topSpacing' type='xs:integer'/>
+            <xs:attribute name='verticalAlignment' type='xs:NCName'/>
+            <xs:attribute name='weight' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UISegmentedControl'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs='unbounded' ref='segment'/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='segment'>
+        <xs:complexType>
+            <xs:attribute name='title' use='required'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIStepper'>
+        <xs:complexType>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+            <xs:attribute name='maximumValue' use='required' type='xs:integer'/>
+            <xs:attribute name='minimumValue' use='required' type='xs:integer'/>
+            <xs:attribute name='onValueChanged' use='required' type='xs:NMTOKEN'/>
+            <xs:attribute name='stepValue' use='required' type='xs:decimal'/>
+            <xs:attribute name='value' use='required' type='xs:decimal'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UISwitch'>
+        <xs:complexType>
+            <xs:attribute name='id' type='xs:NCName'/>
+            <xs:attribute name='on' type='xs:NCName'/>
+            <xs:attribute name='onTintColor'/>
+            <xs:attribute name='onValueChanged' type='xs:NMTOKEN'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIDatePicker'>
+        <xs:complexType>
+            <xs:attribute name='datePickerMode' use='required' type='xs:NCName'/>
+            <xs:attribute name='id' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UITextField'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs='0' ref='LMPickerView'/>
+                <xs:element minOccurs='0' maxOccurs='unbounded' ref='UIImageView'/>
+                <xs:element minOccurs='0' ref='UIDatePicker'/>
+                <xs:element minOccurs='0' ref='UIToolbar'/>
+            </xs:sequence>
+            <xs:attribute name='autocapitalizationType' type='xs:NCName'/>
+            <xs:attribute name='autocorrectionType' type='xs:NCName'/>
+            <xs:attribute name='borderStyle' type='xs:NCName'/>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='clearButtonMode' type='xs:NCName'/>
+            <xs:attribute name='font'/>
+            <xs:attribute name='horizontalContentCompressionResistancePriority' type='xs:integer'/>
+            <xs:attribute name='horizontalContentHuggingPriority' type='xs:integer'/>
+            <xs:attribute name='id' type='xs:NCName'/>
+            <xs:attribute name='keyboardType' type='xs:NCName'/>
+            <xs:attribute name='leftViewMode' type='xs:NCName'/>
+            <xs:attribute name='placeholder'/>
+            <xs:attribute name='rightViewMode' type='xs:NCName'/>
+            <xs:attribute name='secureTextEntry' type='xs:NCName'/>
+            <xs:attribute name='text' type='xs:anyURI'/>
+            <xs:attribute name='weight' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UISlider'>
+        <xs:complexType>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+            <xs:attribute name='onValueChanged' use='required' type='xs:NMTOKEN'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMPickerView'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs='unbounded' ref='row'/>
+            </xs:sequence>
+            <xs:attribute name='id' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='row'>
+        <xs:complexType>
+            <xs:attribute name='title' use='required'/>
+            <xs:attribute name='value'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIButton'>
+        <xs:complexType>
+            <xs:attribute name='attributedTitle'/>
+            <xs:attribute name='backgroundColor'/>
+            <xs:attribute name='clipsToBounds' type='xs:NCName'/>
+            <xs:attribute name='contentEdgeInsets' type='xs:integer'/>
+            <xs:attribute name='contentHorizontalAlignment' type='xs:NCName'/>
+            <xs:attribute name='contentVerticalAlignment' type='xs:NCName'/>
+            <xs:attribute name='id' type='xs:NCName'/>
+            <xs:attribute name='image' type='xs:NCName'/>
+            <xs:attribute name='imageEdgeInsetRight' type='xs:integer'/>
+            <xs:attribute name='layer.borderColor'/>
+            <xs:attribute name='layer.borderWidth' type='xs:decimal'/>
+            <xs:attribute name='layer.cornerRadius' type='xs:integer'/>
+            <xs:attribute name='onPrimaryActionTriggered' type='xs:NCName'/>
+            <xs:attribute name='onTouchUpInside' type='xs:NMTOKEN'/>
+            <xs:attribute name='style' type='xs:NCName'/>
+            <xs:attribute name='tintColor' type='xs:NCName'/>
+            <xs:attribute name='title'/>
+            <xs:attribute name='titleColor' type='xs:NCName'/>
+            <xs:attribute name='titleLabel.shadowOffsetHeight' type='xs:integer'/>
+            <xs:attribute name='titleLabel.shadowOffsetWidth' type='xs:integer'/>
+            <xs:attribute name='titleShadowColor' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIPageControl'>
+        <xs:complexType>
+            <xs:attribute name='currentPageIndicatorTintColor' use='required'/>
+            <xs:attribute name='id' use='required' type='xs:NCName'/>
+            <xs:attribute name='numberOfPages' use='required' type='xs:integer'/>
+            <xs:attribute name='onValueChanged' type='xs:NCName'/>
+            <xs:attribute name='pageIndicatorTintColor' use='required'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMAnchorView'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:sequence minOccurs='0'>
+                    <xs:element ref='UIImageView'/>
+                    <xs:element ref='LMColumnView'/>
+                </xs:sequence>
+                <xs:element minOccurs='0' ref='UIView'/>
+                <xs:element minOccurs='0' maxOccurs='unbounded' ref='UILabel'/>
+            </xs:sequence>
+            <xs:attribute name='backgroundColor' type='xs:NCName'/>
+            <xs:attribute name='bottomSpacing' type='xs:integer'/>
+            <xs:attribute name='layoutMarginsRelativeArrangement' type='xs:NCName'/>
+            <xs:attribute name='leadingSpacing' type='xs:integer'/>
+            <xs:attribute name='topSpacing' type='xs:integer'/>
+            <xs:attribute name='trailingSpacing' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIStackView'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs='0' ref='UITextView'/>
+                <xs:choice minOccurs='0' maxOccurs='unbounded'>
+                    <xs:element ref='UIImageView'/>
+                    <xs:element ref='UILabel'/>
+                    <xs:element ref='UIStackView'/>
+                </xs:choice>
+                <xs:choice>
+                    <xs:element ref='UITextField'/>
+                    <xs:element minOccurs='0' maxOccurs='unbounded' ref='UIButton'/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name='alignment' type='xs:NCName'/>
+            <xs:attribute name='axis' use='required' type='xs:NCName'/>
+            <xs:attribute name='distribution' type='xs:NCName'/>
+            <xs:attribute name='layoutMarginBottom' type='xs:integer'/>
+            <xs:attribute name='layoutMarginTop' type='xs:integer'/>
+            <xs:attribute name='layoutMarginsRelativeArrangement' type='xs:NCName'/>
+            <xs:attribute name='spacing' use='required' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UIToolbar'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs='unbounded' ref='item'/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='LMSpacer'>
+        <xs:complexType>
+            <xs:attribute name='backgroundColor'/>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='height' type='xs:decimal'/>
+            <xs:attribute name='weight' type='xs:decimal'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='item'>
+        <xs:complexType>
+            <xs:attribute name='action' type='xs:NCName'/>
+            <xs:attribute name='name' type='xs:NCName'/>
+            <xs:attribute name='type' use='required' type='xs:NCName'/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name='UITextView'>
+        <xs:complexType>
+            <xs:attribute name='backgroundColor'/>
+            <xs:attribute name='class' type='xs:NCName'/>
+            <xs:attribute name='font' type='xs:NCName'/>
+            <xs:attribute name='height' type='xs:integer'/>
+            <xs:attribute name='id' type='xs:NCName'/>
+            <xs:attribute name='text' type='xs:NMTOKEN'/>
+            <xs:attribute name='verticalContentHuggingPriority' type='xs:integer'/>
+            <xs:attribute name='weight' type='xs:integer'/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
