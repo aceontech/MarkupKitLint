@@ -45,6 +45,9 @@ Now, whenever you build your project, the linter will run and highlight any issu
 ## Future plans
 
 ### XSD schema validation
+
+📣 Tracked by issue [#1](https://github.com/jarrroo/MarkupKitLint/issues/1)
+
 `xmllint` supports passing in an XSD schema. This can be used to provide more in depth validation beyond simple XML syntax. Things we need to make this work:
 
 * Create/maintain a basic XSD schema which describes MarkupKit's default set of markup semantics, including knowledge of basic components (like `LMColumnView`, `LMRowView`) and attributes (like `spacing`, `width`, `height`). This can be a manual effort at first.
