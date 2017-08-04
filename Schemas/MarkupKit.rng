@@ -6,7 +6,7 @@
     // Document root                                                    //
     ////////////////////////////////////////////////////////////////////// 
     -->
-    
+
     <start>
         <element>
             <anyName/>
@@ -22,8 +22,6 @@
             <zeroOrMore>
                 <ref name="any_element"/>
             </zeroOrMore>
-
-            <!-- <ref name="any_markupkit_content"/> -->
         </element>
     </start>
 
