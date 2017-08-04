@@ -1,0 +1,15 @@
+PODS:
+  - MAObjCRuntime (0.0.1)
+  - MarkupKit (3.3)
+
+DEPENDENCIES:
+  - MAObjCRuntime
+  - MarkupKit
+
+SPEC CHECKSUMS:
+  MAObjCRuntime: a6a1d95acbfa3784d66cb35bd42904e47943b488
+  MarkupKit: 6d601c8f02cdb7b795242ad53dfb4a7c18a2c939
+
+PODFILE CHECKSUM: b1ec62fcce85ca76a1efd5f4aaa4eae991620d23
+
+COCOAPODS: 1.2.1
