@@ -1,0 +1,11 @@
+<LMColumnView topSpacing="32" bottomSpacing="32" spacing="64">
+
+    <LMSpacer/>
+    <UIButton style="systemButton" title="Say Hello" onPrimaryActionTriggered="sayHello"/> 
+    <UILabel id="greetingLabel" font="headline" textAlignment="center"/> 
+
+    <!--     
+    <LMSpacer>This should fail!</LMSpacer>
+    -->
+    
+</LMColumnView>

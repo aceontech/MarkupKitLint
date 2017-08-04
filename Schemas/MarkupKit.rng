@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+    <!-- 
+    ////////////////////////////////////////////////////////////////////// 
+    // Document root                                                    //
+    ////////////////////////////////////////////////////////////////////// 
+    -->
+    
+    <start>
+        <element>
+            <anyName/>
+            
+            <zeroOrMore>
+                <ref name="any_attribute"/>
+            </zeroOrMore>
+
+            <zeroOrMore>
+                <ref name="LMSpacer"/>
+            </zeroOrMore>
+
+            <zeroOrMore>
+                <ref name="any_element"/>
+            </zeroOrMore>
+
+            <!-- <ref name="any_markupkit_content"/> -->
+        </element>
+    </start>
+
+    <!-- 
+    ////////////////////////////////////////////////////////////////////// 
+    // MarkupKit Types                                                  //
+    ////////////////////////////////////////////////////////////////////// 
+    -->
+
+    <define name="LMSpacer">
+        <zeroOrMore>    
+            <element name="LMSpacer">
+                <empty/>
+            </element> 
+        </zeroOrMore>    
+    </define>
+
+    <!-- 
+    ////////////////////////////////////////////////////////////////////// 
+    // Wildcard types                                                   //
+    ////////////////////////////////////////////////////////////////////// 
+    -->
+
+    <!-- Any individual element -->
+    <define name="any_element">
+        <element>
+            <anyName>
+                <!-- 
+                Add all known element type names here (defined in "MarkupKit Types") 
+                Ensures that unknown elements are allowed through unless their name 
+                matches with our list of known elements. This will be autogen
+                in the future.
+                -->
+                <except>
+                    <name>LMSpacer</name>
+                </except>
+            </anyName>
+
+            <zeroOrMore>
+                <ref name="any_attribute"/>
+            </zeroOrMore>
+
+            <zeroOrMore>
+                <ref name="any_content"/>
+            </zeroOrMore>
+        </element>
+    </define>
+
+    <!-- Any contiguous collection of elements -->
+    <define name="any_content">
+        <interleave>
+            <zeroOrMore>
+                <ref name="any_element"/>
+            </zeroOrMore>
+            <text/>
+        </interleave>
+    </define>
+
+    <!-- Any attribute -->
+    <define name="any_attribute">
+        <attribute>
+            <anyName/>
+        </attribute>
+    </define>
+
+</grammar>
