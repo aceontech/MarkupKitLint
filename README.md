@@ -44,11 +44,14 @@ Now, whenever you build your project, the linter will run and highlight any issu
 
 ## Future plans
 
-### XSD schema validation
+### Context-aware markup validation
 
 📣 Tracked by issue [#1](https://github.com/jarrroo/MarkupKitLint/issues/1)
 
-`xmllint` supports passing in an XSD schema. This can be used to provide more in depth validation beyond simple XML syntax. Things we need to make this work:
+`xmllint` supports passing in an XML schema. This can be used to provide more in depth validation beyond simple XML syntax. Currently working on:
 
-* Create/maintain a basic XSD schema which describes MarkupKit's default set of markup semantics, including knowledge of basic components (like `LMColumnView`, `LMRowView`) and attributes (like `spacing`, `width`, `height`). This can be a manual effort at first.
-* Generate XSD schema basic on the current projects code structure? This would require some serious sourcery at the lower levels of Objective-C/Swift. 
+* Creating a basic schema which describes MarkupKit's default set of markup semantics, including knowledge of basic components (like `LMColumnView`, `LMRowView`) and attributes (like `spacing`, `width`, `height`). 
+* Auto-generating schema from a running MarkupKit instance
+
+Pie-in-the-sky:
+* Augment the standard schema with the end user app's custom markup element types. This would provide compile-time validation of all MarkupKit markup.
