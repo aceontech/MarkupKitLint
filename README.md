@@ -1,6 +1,9 @@
 # MarkupKitLint
 Linting and validation utilities for [MarkupKit](https://github.com/gk-brown/MarkupKit) integrated into Xcode.
 
+1. [Getting started with `mklint`](#mklintsh)
+2. [Future plans](#context-aware-markup-validation)
+
 ## mklint.sh
 
 ![](Documentation/mklint_xcode_integration.png)
