@@ -1,8 +1,8 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MAObjCRuntime" "${PODS_ROOT}/Headers/Public/MarkupKit"
-LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/MAObjCRuntime" "$PODS_CONFIGURATION_BUILD_DIR/MarkupKit"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MAObjCRuntime" -isystem "${PODS_ROOT}/Headers/Public/MarkupKit"
-OTHER_LDFLAGS = $(inherited) -ObjC
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GRMustache" "${PODS_ROOT}/Headers/Public/JRSwizzle" "${PODS_ROOT}/Headers/Public/MAObjCRuntime" "${PODS_ROOT}/Headers/Public/MarkupKit"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/GRMustache" "$PODS_CONFIGURATION_BUILD_DIR/JRSwizzle" "$PODS_CONFIGURATION_BUILD_DIR/MAObjCRuntime" "$PODS_CONFIGURATION_BUILD_DIR/MarkupKit"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/GRMustache" -isystem "${PODS_ROOT}/Headers/Public/JRSwizzle" -isystem "${PODS_ROOT}/Headers/Public/MAObjCRuntime" -isystem "${PODS_ROOT}/Headers/Public/MarkupKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "Foundation"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

@@ -8,6 +8,7 @@ target 'mkgen' do
   # Pods for mkgen
   pod 'MarkupKit'
   pod 'MAObjCRuntime'
+  pod 'GRMustache'
 
   target 'mkgenTests' do
     inherit! :search_paths

@@ -135,6 +135,7 @@
 		FAE8F6FA1F350E1B00E9B14B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAE8F7061F3510E700E9B14B /* Templates */,
 				FAE8F6FB1F350E1B00E9B14B /* Info.plist */,
 			);
 			path = Resources;
@@ -149,6 +150,13 @@
 				FAE8F7001F350E1B00E9B14B /* ViewController.m */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		FAE8F7061F3510E700E9B14B /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Templates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

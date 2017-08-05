@@ -1,15 +1,21 @@
 PODS:
+  - GRMustache (7.3.2):
+    - JRSwizzle (~> 1.0)
+  - JRSwizzle (1.0)
   - MAObjCRuntime (0.0.1)
   - MarkupKit (3.3)
 
 DEPENDENCIES:
+  - GRMustache
   - MAObjCRuntime
   - MarkupKit
 
 SPEC CHECKSUMS:
+  GRMustache: ebe6104fd30a6d22c1f36af131e19e2dbf7cd292
+  JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
   MAObjCRuntime: a6a1d95acbfa3784d66cb35bd42904e47943b488
   MarkupKit: 6d601c8f02cdb7b795242ad53dfb4a7c18a2c939
 
-PODFILE CHECKSUM: b1ec62fcce85ca76a1efd5f4aaa4eae991620d23
+PODFILE CHECKSUM: fe681d29ea4c67bff4582b4f9977007110e2b20a
 
 COCOAPODS: 1.2.1
