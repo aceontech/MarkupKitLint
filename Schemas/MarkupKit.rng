@@ -11,17 +11,11 @@
         <element>
             <anyName/>
             
-            <zeroOrMore>
+             <zeroOrMore>
                 <ref name="any_attribute"/>
-            </zeroOrMore>
+            </zeroOrMore> 
 
-            <zeroOrMore>
-                <ref name="LMSpacer"/>
-            </zeroOrMore>
-
-            <zeroOrMore>
-                <ref name="any_element"/>
-            </zeroOrMore>
+            <ref name="MarkupElements"/>
         </element>
     </start>
 
@@ -31,10 +25,30 @@
     ////////////////////////////////////////////////////////////////////// 
     -->
 
+    <define name="MarkupElements">
+        <ref name="LMSpacer"/>
+        <ref name="LMColumnView"/>
+
+        <zeroOrMore>
+            <ref name="any_element"/>
+        </zeroOrMore> 
+    </define>
+
     <define name="LMSpacer">
         <zeroOrMore>    
             <element name="LMSpacer">
                 <empty/>
+            </element> 
+        </zeroOrMore>    
+    </define>
+
+    <define name="LMColumnView">
+        <zeroOrMore>    
+            <element name="LMColumnView">
+                <zeroOrMore>
+                    <attribute name="spacing"/>
+                </zeroOrMore>
+                <ref name="MarkupElements"/>
             </element> 
         </zeroOrMore>    
     </define>
@@ -57,6 +71,7 @@
                 -->
                 <except>
                     <name>LMSpacer</name>
+                    <name>LMColumnView</name>
                 </except>
             </anyName>
 
