@@ -2,22 +2,41 @@
 <grammar xmlns="http://relaxng.org/ns/structure/1.0">
 
     <!-- 
-    ////////////////////////////////////////////////////////////////////// 
-    // Document root                                                    //
-    ////////////////////////////////////////////////////////////////////// 
+        Root of the document.
     -->
-
     <start>
-        <element>
-            <anyName/>
-            
-             <zeroOrMore>
-                <ref name="any_attribute"/>
-            </zeroOrMore> 
-
-            <ref name="MarkupElements"/>
-        </element>
+        <ref name="RootElement"/>
     </start>
+
+    <!-- 
+        The root element can only be one of the known MarkupKit elements, 
+        or a <root> element. 
+    -->
+    <define name="RootElement">
+        <choice>
+            <!-- 
+                [GENERATED] 
+                References to all known MarkupKit element types.
+            -->
+            <ref name="LMSpacer"/>
+            <ref name="LMColumnView"/>
+
+            <!-- 
+                The <root> element can have any attribute (by necessity, as 
+                the actual type is only knowable at runtime). Its children
+                must be MarkupKitElements.
+            -->
+            <element name="root">
+                <zeroOrMore>
+                    <ref name="any_attribute"/>
+                </zeroOrMore> 
+
+                <zeroOrMore>
+                    <ref name="MarkupKitElements"/>
+                </zeroOrMore>
+            </element>
+        </choice>
+    </define>
 
     <!-- 
     ////////////////////////////////////////////////////////////////////// 
@@ -25,9 +44,18 @@
     ////////////////////////////////////////////////////////////////////// 
     -->
 
-    <define name="MarkupElements">
-        <ref name="LMSpacer"/>
-        <ref name="LMColumnView"/>
+    <!-- 
+        [GENERATED]
+        References all known MarkupKit element types.
+    -->
+    <define name="MarkupKitElements">
+        <zeroOrMore>
+            <ref name="LMSpacer"/>
+        </zeroOrMore>
+
+        <zeroOrMore>
+            <ref name="LMColumnView"/>
+        </zeroOrMore>
 
         <zeroOrMore>
             <ref name="any_element"/>
@@ -35,22 +63,23 @@
     </define>
 
     <define name="LMSpacer">
-        <zeroOrMore>    
-            <element name="LMSpacer">
-                <empty/>
-            </element> 
-        </zeroOrMore>    
+        <element name="LMSpacer">
+            <empty/>
+        </element> 
     </define>
 
     <define name="LMColumnView">
-        <zeroOrMore>    
-            <element name="LMColumnView">
-                <zeroOrMore>
-                    <attribute name="spacing"/>
-                </zeroOrMore>
-                <ref name="MarkupElements"/>
-            </element> 
-        </zeroOrMore>    
+        <element name="LMColumnView">
+            <zeroOrMore>
+                <attribute name="spacing"/>
+                <attribute name="topSpacing"/>
+                <attribute name="bottomSpacing"/>
+            </zeroOrMore>
+
+            <zeroOrMore>
+                <ref name="MarkupKitElements"/>
+            </zeroOrMore>
+        </element> 
     </define>
 
     <!-- 
@@ -59,20 +88,22 @@
     ////////////////////////////////////////////////////////////////////// 
     -->
 
-    <!-- Any individual element -->
+    <!-- 
+        Any individual element.
+    -->
     <define name="any_element">
         <element>
             <anyName>
                 <!-- 
-                Add all known element type names here (defined in "MarkupKit Types") 
-                Ensures that unknown elements are allowed through unless their name 
-                matches with our list of known elements. This will be autogen
-                in the future.
+                    [GENERATED]
+                    References all known MarkupKit element type names here.
+                    This mechanism allows unknown types to be used, while still
+                    type checking MarkupKit elements.
                 -->
-                <except>
+                 <except>
                     <name>LMSpacer</name>
                     <name>LMColumnView</name>
-                </except>
+                </except> 
             </anyName>
 
             <zeroOrMore>
@@ -85,7 +116,9 @@
         </element>
     </define>
 
-    <!-- Any contiguous collection of elements -->
+    <!-- 
+        Any contiguous collection of elements.
+    -->
     <define name="any_content">
         <interleave>
             <zeroOrMore>
@@ -95,7 +128,9 @@
         </interleave>
     </define>
 
-    <!-- Any attribute -->
+    <!--
+        Any attribute.
+    -->
     <define name="any_attribute">
         <attribute>
             <anyName/>

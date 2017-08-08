@@ -1,4 +1,5 @@
-<root blah="test">
+<LMColumnView topSpacing="32" bottomSpacing="32" spacing="64">
+
     <LMSpacer/>
 
     <LMColumnView>
@@ -11,5 +12,6 @@
 
     <!--     
     <LMSpacer>This should fail!</LMSpacer>
-    -->        
-</root>
+    -->
+    
+</LMColumnView>
