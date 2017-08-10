@@ -1,3 +1,5 @@
+[![Discussion](https://badges.gitter.im/gk-brown/MarkupKit.svg)](https://gitter.im/MarkupKit/Lobby)
+
 # MarkupKitLint
 Linting and validation utilities for [MarkupKit](https://github.com/gk-brown/MarkupKit) integrated into Xcode.
 
