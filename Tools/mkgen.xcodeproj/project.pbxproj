@@ -9,9 +9,21 @@
 /* Begin PBXBuildFile section */
 		D4B6441A1797ABFF63340EF1 /* libPods-mkgen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DD599C4DBED30A64BD1203 /* libPods-mkgen.a */; };
 		E333C91AA5AF59A6449B330F /* libPods-mkgenTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A0FE652977FCCEB7CFF2CC /* libPods-mkgenTests.a */; };
+		FA06E88B1F3AF437005E15D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06E88A1F3AF437005E15D3 /* Default-568h@2x.png */; };
+		FA3182C41F3C3F4C00736305 /* MKLClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3182C31F3C3F4C00736305 /* MKLClass.m */; };
+		FA3182C71F3C43B000736305 /* MKLTrait.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3182C61F3C43B000736305 /* MKLTrait.m */; };
+		FA3E05C11F3A536D008B70C9 /* Schema.rng.mustache in Resources */ = {isa = PBXBuildFile; fileRef = FA3E05C01F3A536D008B70C9 /* Schema.rng.mustache */; };
+		FA3E05D61F3A5F9F008B70C9 /* MKLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E05D11F3A5F9F008B70C9 /* MKLElement.m */; };
+		FA3E05D71F3A5F9F008B70C9 /* MKLElementDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E05D31F3A5F9F008B70C9 /* MKLElementDefinition.m */; };
+		FA3E05D81F3A5F9F008B70C9 /* MKLSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E05D51F3A5F9F008B70C9 /* MKLSchema.m */; };
+		FA3E05DC1F3A600A008B70C9 /* MKLInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E05DB1F3A600A008B70C9 /* MKLInspector.m */; };
+		FA3E05DF1F3A60F0008B70C9 /* MKLSchemaBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E05DE1F3A60F0008B70C9 /* MKLSchemaBuilder.m */; };
+		FA3E05E21F3AED28008B70C9 /* ElementBody.rng.mustache in Resources */ = {isa = PBXBuildFile; fileRef = FA3E05E01F3AED28008B70C9 /* ElementBody.rng.mustache */; };
+		FA3E05E31F3AED28008B70C9 /* EmptyElementBody.rng.mustache in Resources */ = {isa = PBXBuildFile; fileRef = FA3E05E11F3AED28008B70C9 /* EmptyElementBody.rng.mustache */; };
+		FA3E05E61F3AED71008B70C9 /* MKLElementBody.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E05E51F3AED71008B70C9 /* MKLElementBody.m */; };
+		FA3E05E91F3AEDC6008B70C9 /* MKLElementAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E05E81F3AEDC6008B70C9 /* MKLElementAttribute.m */; };
 		FAE8F6D31F343D3F00E9B14B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE8F6D21F343D3F00E9B14B /* main.m */; };
 		FAE8F6EC1F343D3F00E9B14B /* mkgenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE8F6EB1F343D3F00E9B14B /* mkgenTests.m */; };
-		FAE8F7011F350E1B00E9B14B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE8F6FB1F350E1B00E9B14B /* Info.plist */; };
 		FAE8F7021F350E1B00E9B14B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE8F6FE1F350E1B00E9B14B /* AppDelegate.m */; };
 		FAE8F7031F350E1B00E9B14B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE8F7001F350E1B00E9B14B /* ViewController.m */; };
 /* End PBXBuildFile section */
@@ -33,6 +45,28 @@
 		8683C874F5AC0200B6B5A8C9 /* Pods-mkgen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mkgen.release.xcconfig"; path = "Pods/Target Support Files/Pods-mkgen/Pods-mkgen.release.xcconfig"; sourceTree = "<group>"; };
 		99A0FE652977FCCEB7CFF2CC /* libPods-mkgenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mkgenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C0B999391D5ECCFEC2E892 /* Pods-mkgen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mkgen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mkgen/Pods-mkgen.debug.xcconfig"; sourceTree = "<group>"; };
+		FA06E88A1F3AF437005E15D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FA3182C21F3C3F4C00736305 /* MKLClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLClass.h; sourceTree = "<group>"; };
+		FA3182C31F3C3F4C00736305 /* MKLClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLClass.m; sourceTree = "<group>"; };
+		FA3182C51F3C43B000736305 /* MKLTrait.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLTrait.h; sourceTree = "<group>"; };
+		FA3182C61F3C43B000736305 /* MKLTrait.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLTrait.m; sourceTree = "<group>"; };
+		FA3E05C01F3A536D008B70C9 /* Schema.rng.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Schema.rng.mustache; sourceTree = "<group>"; };
+		FA3E05D01F3A5F9F008B70C9 /* MKLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLElement.h; sourceTree = "<group>"; };
+		FA3E05D11F3A5F9F008B70C9 /* MKLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLElement.m; sourceTree = "<group>"; };
+		FA3E05D21F3A5F9F008B70C9 /* MKLElementDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLElementDefinition.h; sourceTree = "<group>"; };
+		FA3E05D31F3A5F9F008B70C9 /* MKLElementDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLElementDefinition.m; sourceTree = "<group>"; };
+		FA3E05D41F3A5F9F008B70C9 /* MKLSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLSchema.h; sourceTree = "<group>"; };
+		FA3E05D51F3A5F9F008B70C9 /* MKLSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLSchema.m; sourceTree = "<group>"; };
+		FA3E05DA1F3A600A008B70C9 /* MKLInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLInspector.h; sourceTree = "<group>"; };
+		FA3E05DB1F3A600A008B70C9 /* MKLInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLInspector.m; sourceTree = "<group>"; };
+		FA3E05DD1F3A60F0008B70C9 /* MKLSchemaBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLSchemaBuilder.h; sourceTree = "<group>"; };
+		FA3E05DE1F3A60F0008B70C9 /* MKLSchemaBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLSchemaBuilder.m; sourceTree = "<group>"; };
+		FA3E05E01F3AED28008B70C9 /* ElementBody.rng.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementBody.rng.mustache; sourceTree = "<group>"; };
+		FA3E05E11F3AED28008B70C9 /* EmptyElementBody.rng.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmptyElementBody.rng.mustache; sourceTree = "<group>"; };
+		FA3E05E41F3AED71008B70C9 /* MKLElementBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLElementBody.h; sourceTree = "<group>"; };
+		FA3E05E51F3AED71008B70C9 /* MKLElementBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLElementBody.m; sourceTree = "<group>"; };
+		FA3E05E71F3AEDC6008B70C9 /* MKLElementAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLElementAttribute.h; sourceTree = "<group>"; };
+		FA3E05E81F3AEDC6008B70C9 /* MKLElementAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLElementAttribute.m; sourceTree = "<group>"; };
 		FAE8F6CE1F343D3F00E9B14B /* mkgen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mkgen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE8F6D21F343D3F00E9B14B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAE8F6E71F343D3F00E9B14B /* mkgenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mkgenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,9 +119,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA3E05BF1F3A530B008B70C9 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E05C01F3A536D008B70C9 /* Schema.rng.mustache */,
+				FA3E05E01F3AED28008B70C9 /* ElementBody.rng.mustache */,
+				FA3E05E11F3AED28008B70C9 /* EmptyElementBody.rng.mustache */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		FA3E05CF1F3A5F9F008B70C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E05D01F3A5F9F008B70C9 /* MKLElement.h */,
+				FA3E05D11F3A5F9F008B70C9 /* MKLElement.m */,
+				FA3E05D21F3A5F9F008B70C9 /* MKLElementDefinition.h */,
+				FA3E05D31F3A5F9F008B70C9 /* MKLElementDefinition.m */,
+				FA3E05D41F3A5F9F008B70C9 /* MKLSchema.h */,
+				FA3E05D51F3A5F9F008B70C9 /* MKLSchema.m */,
+				FA3E05E41F3AED71008B70C9 /* MKLElementBody.h */,
+				FA3E05E51F3AED71008B70C9 /* MKLElementBody.m */,
+				FA3E05E71F3AEDC6008B70C9 /* MKLElementAttribute.h */,
+				FA3E05E81F3AEDC6008B70C9 /* MKLElementAttribute.m */,
+				FA3182C21F3C3F4C00736305 /* MKLClass.h */,
+				FA3182C31F3C3F4C00736305 /* MKLClass.m */,
+				FA3182C51F3C43B000736305 /* MKLTrait.h */,
+				FA3182C61F3C43B000736305 /* MKLTrait.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA3E05D91F3A5FFA008B70C9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E05DA1F3A600A008B70C9 /* MKLInspector.h */,
+				FA3E05DB1F3A600A008B70C9 /* MKLInspector.m */,
+				FA3E05DD1F3A60F0008B70C9 /* MKLSchemaBuilder.h */,
+				FA3E05DE1F3A60F0008B70C9 /* MKLSchemaBuilder.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		FAE8F6C51F343D3F00E9B14B = {
 			isa = PBXGroup;
 			children = (
+				FA06E88A1F3AF437005E15D3 /* Default-568h@2x.png */,
 				FAE8F6D01F343D3F00E9B14B /* mkgen */,
 				FAE8F6EA1F343D3F00E9B14B /* mkgenTests */,
 				FAE8F6CF1F343D3F00E9B14B /* Products */,
@@ -135,7 +212,7 @@
 		FAE8F6FA1F350E1B00E9B14B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FAE8F7061F3510E700E9B14B /* Templates */,
+				FA3E05BF1F3A530B008B70C9 /* Templates */,
 				FAE8F6FB1F350E1B00E9B14B /* Info.plist */,
 			);
 			path = Resources;
@@ -144,19 +221,14 @@
 		FAE8F6FC1F350E1B00E9B14B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E05D91F3A5FFA008B70C9 /* Util */,
+				FA3E05CF1F3A5F9F008B70C9 /* Model */,
 				FAE8F6FD1F350E1B00E9B14B /* AppDelegate.h */,
 				FAE8F6FE1F350E1B00E9B14B /* AppDelegate.m */,
 				FAE8F6FF1F350E1B00E9B14B /* ViewController.h */,
 				FAE8F7001F350E1B00E9B14B /* ViewController.m */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		FAE8F7061F3510E700E9B14B /* Templates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Templates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +321,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE8F7011F350E1B00E9B14B /* Info.plist in Resources */,
+				FA3E05E31F3AED28008B70C9 /* EmptyElementBody.rng.mustache in Resources */,
+				FA06E88B1F3AF437005E15D3 /* Default-568h@2x.png in Resources */,
+				FA3E05C11F3A536D008B70C9 /* Schema.rng.mustache in Resources */,
+				FA3E05E21F3AED28008B70C9 /* ElementBody.rng.mustache in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,9 +435,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3E05D71F3A5F9F008B70C9 /* MKLElementDefinition.m in Sources */,
+				FA3182C71F3C43B000736305 /* MKLTrait.m in Sources */,
+				FA3E05DF1F3A60F0008B70C9 /* MKLSchemaBuilder.m in Sources */,
 				FAE8F7021F350E1B00E9B14B /* AppDelegate.m in Sources */,
 				FAE8F6D31F343D3F00E9B14B /* main.m in Sources */,
+				FA3E05E91F3AEDC6008B70C9 /* MKLElementAttribute.m in Sources */,
 				FAE8F7031F350E1B00E9B14B /* ViewController.m in Sources */,
+				FA3E05D81F3A5F9F008B70C9 /* MKLSchema.m in Sources */,
+				FA3E05DC1F3A600A008B70C9 /* MKLInspector.m in Sources */,
+				FA3E05E61F3AED71008B70C9 /* MKLElementBody.m in Sources */,
+				FA3182C41F3C3F4C00736305 /* MKLClass.m in Sources */,
+				FA3E05D61F3A5F9F008B70C9 /* MKLElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

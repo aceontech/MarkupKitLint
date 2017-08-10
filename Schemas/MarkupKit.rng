@@ -1,140 +1,1005 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0">
 
-    <!-- 
-        Root of the document.
-    -->
-    <start>
-        <ref name="RootElement"/>
-    </start>
+  <!-- Root of the document. -->
+  <start>
+    <ref name="RootElement"/>
+  </start>
 
-    <!-- 
-        The root element can only be one of the known MarkupKit elements, 
-        or a <root> element. 
-    -->
-    <define name="RootElement">
-        <choice>
-            <!-- 
-                [GENERATED] 
-                References to all known MarkupKit element types.
-            -->
-            <ref name="LMSpacer"/>
-            <ref name="LMColumnView"/>
+  <!--
+        The root element can only be one of the known MarkupKit elements,
+        or a <root> element.
+  -->
+  <define name="RootElement">
+    <choice>
+      <!-- [GENERATED] References to all known MarkupKit element types. -->
+      <ref name="LMSpacer"/>
 
-            <!-- 
-                The <root> element can have any attribute (by necessity, as 
-                the actual type is only knowable at runtime). Its children
-                must be MarkupKitElements.
-            -->
-            <element name="root">
-                <zeroOrMore>
-                    <ref name="any_attribute"/>
-                </zeroOrMore> 
+      <ref name="LMLinearGradientView"/>
 
-                <zeroOrMore>
-                    <ref name="MarkupKitElements"/>
-                </zeroOrMore>
-            </element>
-        </choice>
-    </define>
+      <ref name="LMRadialGradientView"/>
 
-    <!-- 
-    ////////////////////////////////////////////////////////////////////// 
+      <ref name="LMPlayerView"/>
+
+      <ref name="LMColumnView"/>
+
+      <ref name="LMRowView"/>
+
+      <ref name="LMLayerView"/>
+
+      <ref name="LMAnchorView"/>
+
+      <ref name="LMScrollView"/>
+
+      <ref name="LMPageView"/>
+
+      <ref name="LMPickerView"/>
+
+      <!--
+        The <root> element can have any attribute (by necessity, as
+        the actual type is only knowable at runtime). Its children
+        must be MarkupKitElements.
+      -->
+      <element name="root">
+        <zeroOrMore>
+          <ref name="any_attribute"/>
+        </zeroOrMore>
+
+        <zeroOrMore>
+          <ref name="MarkupKitElements"/>
+        </zeroOrMore>
+      </element>
+    </choice>
+  </define>
+
+  <!--
+    //////////////////////////////////////////////////////////////////////
     // MarkupKit Types                                                  //
-    ////////////////////////////////////////////////////////////////////// 
+    //////////////////////////////////////////////////////////////////////
     -->
 
-    <!-- 
-        [GENERATED]
-        References all known MarkupKit element types.
-    -->
-    <define name="MarkupKitElements">
-        <zeroOrMore>
-            <ref name="LMSpacer"/>
-        </zeroOrMore>
+  <!-- References all known MarkupKit element types.-->
+  <define name="MarkupKitElements">
+    <!-- [GENERATED] -->
+    <zeroOrMore>
+      <ref name="LMSpacer"/>
+    </zeroOrMore>
 
-        <zeroOrMore>
-            <ref name="LMColumnView"/>
-        </zeroOrMore>
+    <zeroOrMore>
+      <ref name="LMLinearGradientView"/>
+    </zeroOrMore>
 
-        <zeroOrMore>
-            <ref name="any_element"/>
-        </zeroOrMore> 
-    </define>
+    <zeroOrMore>
+      <ref name="LMRadialGradientView"/>
+    </zeroOrMore>
 
-    <define name="LMSpacer">
-        <element name="LMSpacer">
-            <empty/>
-        </element> 
-    </define>
+    <zeroOrMore>
+      <ref name="LMPlayerView"/>
+    </zeroOrMore>
 
-    <define name="LMColumnView">
-        <element name="LMColumnView">
-            <zeroOrMore>
-                <attribute name="spacing"/>
-                <attribute name="topSpacing"/>
-                <attribute name="bottomSpacing"/>
-            </zeroOrMore>
+    <zeroOrMore>
+      <ref name="LMColumnView"/>
+    </zeroOrMore>
 
-            <zeroOrMore>
-                <ref name="MarkupKitElements"/>
-            </zeroOrMore>
-        </element> 
-    </define>
+    <zeroOrMore>
+      <ref name="LMRowView"/>
+    </zeroOrMore>
 
-    <!-- 
-    ////////////////////////////////////////////////////////////////////// 
-    // Wildcard types                                                   //
-    ////////////////////////////////////////////////////////////////////// 
-    -->
+    <zeroOrMore>
+      <ref name="LMLayerView"/>
+    </zeroOrMore>
 
-    <!-- 
-        Any individual element.
-    -->
-    <define name="any_element">
-        <element>
-            <anyName>
-                <!-- 
-                    [GENERATED]
-                    References all known MarkupKit element type names here.
-                    This mechanism allows unknown types to be used, while still
-                    type checking MarkupKit elements.
-                -->
-                 <except>
-                    <name>LMSpacer</name>
-                    <name>LMColumnView</name>
-                </except> 
-            </anyName>
+    <zeroOrMore>
+      <ref name="LMAnchorView"/>
+    </zeroOrMore>
 
-            <zeroOrMore>
-                <ref name="any_attribute"/>
-            </zeroOrMore>
+    <zeroOrMore>
+      <ref name="LMScrollView"/>
+    </zeroOrMore>
 
-            <zeroOrMore>
-                <ref name="any_content"/>
-            </zeroOrMore>
-        </element>
-    </define>
+    <zeroOrMore>
+      <ref name="LMPageView"/>
+    </zeroOrMore>
 
-    <!-- 
-        Any contiguous collection of elements.
-    -->
-    <define name="any_content">
-        <interleave>
-            <zeroOrMore>
-                <ref name="any_element"/>
-            </zeroOrMore>
-            <text/>
-        </interleave>
-    </define>
+    <zeroOrMore>
+      <ref name="LMPickerView"/>
+    </zeroOrMore>
 
-    <!--
-        Any attribute.
-    -->
-    <define name="any_attribute">
-        <attribute>
-            <anyName/>
-        </attribute>
-    </define>
+    <zeroOrMore>
+      <ref name="any_element"/>
+    </zeroOrMore>
+  </define>
+
+  <!-- [GENERATED] -->
+  <define name="LMSpacer">
+    <element name="LMSpacer">
+
+      <ref name="UIView"/>
+
+      <empty/>
+
+    </element>
+  </define>
+
+  <define name="LMLinearGradientView">
+    <element name="LMLinearGradientView">
+
+      <zeroOrMore>
+        <attribute name="startX"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="startY"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="startPoint"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="endX"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="endY"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="endPoint"/>
+      </zeroOrMore>
+
+      <ref name="LMGradientView"/>
+
+      <ref name="UIView"/>
+
+      <empty/>
+
+    </element>
+  </define>
+
+  <define name="LMRadialGradientView">
+    <element name="LMRadialGradientView">
+
+      <zeroOrMore>
+        <attribute name="centerX"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="centerY"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="centerPoint"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="radius"/>
+      </zeroOrMore>
+
+      <ref name="LMGradientView"/>
+
+      <ref name="UIView"/>
+
+      <empty/>
+
+    </element>
+  </define>
+
+  <define name="LMPlayerView">
+    <element name="LMPlayerView">
+
+      <ref name="UIView"/>
+
+      <empty/>
+
+    </element>
+  </define>
+
+  <define name="LMColumnView">
+    <element name="LMColumnView">
+
+      <zeroOrMore>
+        <attribute name="alignToGrid"/>
+      </zeroOrMore>
+
+      <ref name="LMBoxView"/>
+
+      <ref name="LMLayoutView"/>
+
+      <ref name="UIView"/>
+
+      <zeroOrMore>
+        <ref name="MarkupKitElements"/>
+      </zeroOrMore>
+
+    </element>
+  </define>
+
+  <define name="LMRowView">
+    <element name="LMRowView">
+
+      <zeroOrMore>
+        <attribute name="alignToBaseline"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="baseline"/>
+      </zeroOrMore>
+
+      <ref name="LMBoxView"/>
+
+      <ref name="LMLayoutView"/>
+
+      <ref name="UIView"/>
+
+      <zeroOrMore>
+        <ref name="MarkupKitElements"/>
+      </zeroOrMore>
+
+    </element>
+  </define>
+
+  <define name="LMLayerView">
+    <element name="LMLayerView">
+
+      <ref name="LMLayoutView"/>
+
+      <ref name="UIView"/>
+
+      <zeroOrMore>
+        <ref name="MarkupKitElements"/>
+      </zeroOrMore>
+
+    </element>
+  </define>
+
+  <define name="LMAnchorView">
+    <element name="LMAnchorView">
+
+      <ref name="LMLayoutView"/>
+
+      <ref name="UIView"/>
+
+      <zeroOrMore>
+        <ref name="MarkupKitElements"/>
+      </zeroOrMore>
+
+    </element>
+  </define>
+
+  <define name="LMScrollView">
+    <element name="LMScrollView">
+
+      <zeroOrMore>
+        <attribute name="contentView"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="fitToWidth"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <attribute name="fitToHeight"/>
+      </zeroOrMore>
+
+      <ref name="UIScrollView"/>
+
+      <ref name="UIView"/>
+
+      <zeroOrMore>
+        <ref name="MarkupKitElements"/>
+      </zeroOrMore>
+
+    </element>
+  </define>
+
+  <define name="LMPageView">
+    <element name="LMPageView">
+
+      <zeroOrMore>
+        <attribute name="pages"/>
+      </zeroOrMore>
+
+      <ref name="UIScrollView"/>
+
+      <ref name="UIView"/>
+
+      <zeroOrMore>
+        <ref name="MarkupKitElements"/>
+      </zeroOrMore>
+
+    </element>
+  </define>
+
+  <define name="LMPickerView">
+    <element name="LMPickerView">
+
+      <ref name="UIPickerView"/>
+
+      <ref name="UIView"/>
+
+      <zeroOrMore>
+        <ref name="MarkupKitElements"/>
+      </zeroOrMore>
+
+    </element>
+  </define>
+
+  <!--
+  //////////////////////////////////////////////////////////////////////
+  // UIKit Traits                                                     //
+  //////////////////////////////////////////////////////////////////////
+  -->
+
+  <!-- [GENERATED] -->
+  <define name="UIView">
+
+    <zeroOrMore>
+      <attribute name="width"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="minimumWidth"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="maximumWidth"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="height"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="minimumHeight"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="maximumHeight"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="aspectRatio"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="weight"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="anchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="horizontalContentCompressionResistancePriority"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="horizontalContentHuggingPriority"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="verticalContentCompressionResistancePriority"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="verticalContentHuggingPriority"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="layoutMarginTop"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="layoutMarginLeft"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="layoutMarginBottom"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="layoutMarginRight"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="skipsSubviewEnumeration"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="viewTraversalMark"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="viewDelegate"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="monitorsSubtree"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="backgroundColorSystemColorName"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="currentScreenScale"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="maskView"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="hash"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="superclass"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="description"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="debugDescription"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="gesturesEnabled"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="deliversTouchesForGesturesToSuperview"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="deliversButtonsForGesturesToSuperview"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="leadingAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="trailingAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="leftAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="rightAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="topAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="bottomAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="widthAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="heightAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="centerXAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="centerYAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="firstBaselineAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="lastBaselineAnchor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="contentSizeNotificationToken"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="layoutMarginsGuide"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="readableContentGuide"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="previewingSegueTemplateStorage"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="interactionTintColor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="wantsDeepColorDrawing"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="userInteractionEnabled"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="tag"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="layer"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="canBecomeFocused"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="focused"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="semanticContentAttribute"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="effectiveUserInterfaceLayoutDirection"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="traitCollection"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="preferredFocusEnvironments"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="preferredFocusedView"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="preferredFocusMovementStyle"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="linearFocusMovementSequences"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="focusedView"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="center"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="bounds"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="transform"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="collisionBoundsType"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="collisionBoundingPath"/>
+    </zeroOrMore>
+
+  </define>
+
+  <define name="LMGradientView">
+
+    <zeroOrMore>
+      <attribute name="colors"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="locations"/>
+    </zeroOrMore>
+
+  </define>
+
+  <define name="LMBoxView">
+
+    <zeroOrMore>
+      <attribute name="horizontalAlignment"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="verticalAlignment"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="spacing"/>
+    </zeroOrMore>
+
+  </define>
+
+  <define name="LMLayoutView">
+
+    <zeroOrMore>
+      <attribute name="arrangedSubviews"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="layoutMarginsRelativeArrangement"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="topSpacing"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="bottomSpacing"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="leadingSpacing"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="trailingSpacing"/>
+    </zeroOrMore>
+
+  </define>
+
+  <define name="UIScrollView">
+
+    <zeroOrMore>
+      <attribute name="contentInsetTop"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="contentInsetLeft"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="contentInsetBottom"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="contentInsetRight"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="currentPage"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="adjustsTargetsOnContentOffsetChanges"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="firstResponderKeyboardAvoidanceEnabled"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="programmaticScrollEnabled"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="scrollingToTop"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="isAnimatingScroll"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="isVerticalBouncing"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="isHorizontalBouncing"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="isAnimatingZoom"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="zoomAnchorPoint"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="scrollTestParameters"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="minimumContentOffset"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="maximumContentOffset"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="forwardsTouchesUpResponderChain"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="focusFastScrolling"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="attemptingToEndFocusFastScrolling"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="showingFocusFastScrollingPreview"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="contentOffset"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="contentSize"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="contentInset"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="directionalLockEnabled"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="bounces"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="alwaysBounceVertical"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="alwaysBounceHorizontal"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="pagingEnabled"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="scrollEnabled"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="showsHorizontalScrollIndicator"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="showsVerticalScrollIndicator"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="scrollIndicatorInsets"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="indicatorStyle"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="decelerationRate"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="indexDisplayMode"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="tracking"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="dragging"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="decelerating"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="delaysContentTouches"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="canCancelContentTouches"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="minimumZoomScale"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="maximumZoomScale"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="zoomScale"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="bouncesZoom"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="zooming"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="zoomBouncing"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="scrollsToTop"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="panGestureRecognizer"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="pinchGestureRecognizer"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="directionalPressGestureRecognizer"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="keyboardDismissMode"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="refreshControl"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="touchDelayForScrollDetection"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="scrollHysteresis"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="canScrollX"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="canScrollY"/>
+    </zeroOrMore>
+
+  </define>
+
+  <define name="UIPickerView">
+
+    <zeroOrMore>
+      <attribute name="magnifierLineColor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="enabled"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="retargetBehavior"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="usesModernStyle"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="highlightColor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="textColor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="textShadowColor"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="showsSelectionIndicator"/>
+    </zeroOrMore>
+
+    <zeroOrMore>
+      <attribute name="numberOfComponents"/>
+    </zeroOrMore>
+
+  </define>
+
+  <!--
+  //////////////////////////////////////////////////////////////////////
+  // Wildcard types                                                   //
+  //////////////////////////////////////////////////////////////////////
+  -->
+
+  <!--Any individual element. -->
+  <define name="any_element">
+    <element>
+      <anyName>
+        <!--
+          References all known MarkupKit element type names here.
+          This mechanism allows unknown types to be used, while still
+          type checking MarkupKit elements.
+        -->
+        <except>
+
+          <!-- [GENERATED] -->
+          <name>LMSpacer</name>
+
+          <name>LMLinearGradientView</name>
+
+          <name>LMRadialGradientView</name>
+
+          <name>LMPlayerView</name>
+
+          <name>LMColumnView</name>
+
+          <name>LMRowView</name>
+
+          <name>LMLayerView</name>
+
+          <name>LMAnchorView</name>
+
+          <name>LMScrollView</name>
+
+          <name>LMPageView</name>
+
+          <name>LMPickerView</name>
+
+        </except>
+      </anyName>
+
+      <zeroOrMore>
+        <ref name="any_attribute"/>
+      </zeroOrMore>
+
+      <zeroOrMore>
+        <ref name="any_content"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <!-- Any contiguous collection of elements. -->
+  <define name="any_content">
+    <interleave>
+      <zeroOrMore>
+        <ref name="any_element"/>
+      </zeroOrMore>
+      <text/>
+    </interleave>
+  </define>
+
+  <!-- Any attribute. -->
+  <define name="any_attribute">
+    <attribute>
+      <anyName/>
+    </attribute>
+  </define>
 
 </grammar>
