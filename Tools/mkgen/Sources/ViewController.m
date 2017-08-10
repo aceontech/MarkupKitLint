@@ -21,21 +21,4 @@
     [MKLSchemaBuilder renderToFile];
 }
 
-//-(void)iterateProperties {
-//    NSLog(@"\n\n----- UIView -----");
-//    [self iteratePropertiesOfClass:UIView.class block:^(RTProperty *property, NSString *name, NSString *type) {
-//        NSLog(@"[%@] UIView.%@", type, name);
-//    }];
-//
-//    NSLog(@"\n\n----- UIControl -----");
-//    [self iteratePropertiesOfClass:UIControl.class block:^(RTProperty *property, NSString *name, NSString *type) {
-//        NSLog(@"[%@] UIControl.%@", type, name);
-//    }];
-//
-//    NSLog(@"\n\n----- UIScrollView -----");
-//    [self iteratePropertiesOfClass:UIScrollView.class block:^(RTProperty *property, NSString *name, NSString *type) {
-//        NSLog(@"[%@] UIScrollView.%@", type, name);
-//    }];
-//}
-
 @end
